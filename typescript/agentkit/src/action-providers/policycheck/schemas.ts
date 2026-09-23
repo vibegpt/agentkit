@@ -7,15 +7,17 @@ export const PolicyCheckAnalyzeSchema = z
   .object({
     policyText: z
       .string()
+      .min(50)
+      .max(100_000)
       .optional()
       .describe(
-        "The full text of the seller's return policy, shipping policy, warranty, or terms of service to analyze. Provide this OR sellerUrl.",
+        "The full text of the seller's return policy, shipping policy, warranty, or terms of service to analyze. When sellerUrl is also supplied, it is context only.",
       ),
     sellerUrl: z
       .string()
       .optional()
       .describe(
-        "The URL of the e-commerce store to check (e.g., 'https://example-store.com'). The service will find and analyze the seller's policies automatically. Provide this OR policyText.",
+        "The URL of the e-commerce store to check (e.g., 'https://example-store.com'). The service will find and analyze the seller's policies automatically. If policyText is provided, that text takes precedence.",
       ),
   })
   .strict()

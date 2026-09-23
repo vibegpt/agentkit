@@ -2,4 +2,4 @@
 "@coinbase/agentkit": minor
 ---
 
-Added PolicyCheck action provider for pre-purchase seller policy verification. Enables AI agents to analyze e-commerce seller return policies, shipping terms, warranty coverage, and terms of service before making purchases. Returns risk level, buyer protection score, key findings, and purchase recommendation. Walletless provider — works on all networks.
+Added a walletless PolicyCheck provider for independent pre-purchase seller policy facts. Returns structured returns, shipping, warranty and legal facts with source excerpts, provenance, coverage, limitations and a signed assessment. The calling agent makes purchase decisions; no scores or recommendations are emitted. Supplied text remains caller-provided data, including when it contains hyperlinks.
